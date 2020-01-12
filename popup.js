@@ -12,7 +12,6 @@ chrome.storage.sync.get('color', function (data) {
 });
 
 changeColor.onclick = function (element) {
-  console.log("asdfasdfa")
   console.log(document.activeElement);
 
   let color = element.target.value;
