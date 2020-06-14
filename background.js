@@ -12,7 +12,6 @@ chrome.runtime.onInstalled.addListener(function () {
 
   // chrome.tabs.executeScript(tabs[0].id, { file: "test.js" });
 
-
   chrome.runtime.sendMessage({
     msg: "something_completed",
     data: {

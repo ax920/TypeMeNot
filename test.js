@@ -58,6 +58,8 @@ function getToxicity(text) {
                     // chrome.browserAction.setIcon({
                     //     path: "images/red.png"
                     // });
+                } else {
+                    // Remove heated css
                 }
             });
         })
