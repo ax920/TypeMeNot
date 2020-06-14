@@ -4,24 +4,27 @@
 
 'use strict';
 
-let changeColor = document.getElementById('changeColor');
+let popup = document.getElementById('changeColor');
 
-chrome.storage.sync.get('color', function (data) {
-  changeColor.style.backgroundColor = data.color;
-  changeColor.setAttribute('value', data.color);
-});
+// chrome.storage.sync.get('color', function (data) {
+//   changeColor.style.backgroundColor = data.color;
+//   changeColor.setAttribute('value', data.color);
+// });
 
-changeColor.onclick = function (element) {
+popup.onclick = function (element) {
   console.log(document.activeElement);
 
   let color = element.target.value;
   // let code = document.createElement('div');
   // elem.style.cssText = 'position:absolute;width:100%;height:100%;opacity:0.3;z-index:100;background:#000';
   // document.body.appendChild(elem);
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.tabs.executeScript(
-      tabs[0].id,
-      { file: "test.js" });
+  chrome.tabs.query({ currentWindow: true }, function (tabs) {
+    console.log(tabs)
+    for (var i = 0; i < tabs.length; i++) {
+      chrome.tabs.executeScript(
+        tabs[i].id,
+        { file: "test.js" });
+    }
   });
 };
 

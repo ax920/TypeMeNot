@@ -54,7 +54,7 @@ function getToxicity(text) {
                     var elem = document.createElement('div');
                     elem.style.cssText = 'position:absolute;width:100%;height:150px;opacity:0.2;z-index:100;background:#ff8d00;box-shadow: 0px 0px 40px 20px #ff8d00';
                     document.body.appendChild(elem);
-                    alert("dont say swears!!!");
+                    alert("how about let's tone it down a little");
                     // chrome.browserAction.setIcon({
                     //     path: "images/red.png"
                     // });
